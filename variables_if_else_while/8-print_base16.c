@@ -16,8 +16,9 @@ int main(void)
 		putchar(48 + n);
 		n = n + 1;
 	}
-	while ( c <= 'f')
-		{putchar(c);
+	while (c <= 'f')
+	{
+		putchar(c);
 		c = c + 1;
 	}
 	putchar('\n');
