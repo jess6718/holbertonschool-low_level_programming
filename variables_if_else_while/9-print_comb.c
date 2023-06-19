@@ -15,7 +15,8 @@ int main(void)
 	while (n < 10)
 	{
 		putchar(48 + n);
-		if (n < 9) {
+		if (n < 9)
+		{
 			putchar(comma);
 			putchar(space);
 		}
