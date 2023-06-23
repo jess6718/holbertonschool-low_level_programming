@@ -18,7 +18,6 @@ void print_line(int n)
 			_putchar('_');
 			i = i + 1;
 		}
-		_putchar('\n');
 	}
 	_putchar('\n');
 }
