@@ -9,18 +9,16 @@ void print_triangle(int size)
 {
 	int t;
 	int s;
-	int limit;
 
-	limit = size - 1;
 	if (size > 0)
 	{
-		t = 0;
-		while (t < size)
+		t = 1;
+		while (t <= size)
 		{
 			s = 0;
 			while (s < size)
 			{
-				if (s < limit)
+				if (s < (size - t))
 				{
 					_putchar(' ');
 				}
@@ -30,7 +28,6 @@ void print_triangle(int size)
 				}
 			s = s + 1;
 			}
-			limit = limit - 1;
 			_putchar('\n');
 		t = t + 1;
 		}
