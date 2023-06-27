@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * rev_string - prints n elements of an array of integers
+ * print_array - prints n elements of an array of integers
  * @a:a pointer
  * @n:a int
  * Return: Nothing
