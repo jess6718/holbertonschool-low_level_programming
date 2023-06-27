@@ -13,11 +13,11 @@ int _strcmp(char *s1, char *s2)
 
 	len_s1 = 0;
 	len_s2 = 0;
-	while (len_s1 != '\0' && len_s2 != '\0')
+	while (s1[len_s1] != '\0' && s2[len_s2] != '\0')
 	{
 		/* calculate difference of the first non - matching character */
 		if (s1[len_s1] != s2[len_s2])
-		{
+		{	
 			return (s1[len_s1] - s2[len_s2]);
 		}
 		len_s1 = len_s1 + 1;
