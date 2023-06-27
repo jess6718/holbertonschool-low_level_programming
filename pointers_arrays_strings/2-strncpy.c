@@ -19,9 +19,10 @@ char *_strncpy(char *dest, char *src, int n)
 	temp = dest;
 	start = src;
 
-	while (src[srclen] != '\0')
+	while (*src)
 	{
-		srclen = srclen + 1;
+		srclen++;
+		src++;
 	}
 
 	srclen++;
