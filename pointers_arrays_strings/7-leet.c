@@ -13,15 +13,15 @@ char *leet(char *s)
 	char str[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 
 	i = 0;
-	j = 0;
 	while (s[i] != '\0')
-	{
+	{	
+		j = 0;
 		while (str[j] != '\0')
 		{
 			if (s[i] == str[j])
 			{
 				s[i] = num[j];
-			}
+			}		
 			j = j + 1;
 		}
 		i = i + 1;
