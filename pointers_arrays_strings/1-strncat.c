@@ -12,20 +12,14 @@ char *_strncat(char *dest, char *src, int n)
 	int len_s;
 	int len_d;
 	int i;
-	char *temp;
-	char *start;
 
 	len_s = 0;
-	len_d = 0;
-	i = 0;
-	temp = dest;
-	start = src;
-
 	while (src[len_s] != '\0')
 	{
 		len_s = len_s + 1;
 	}
 
+	len_d = 0;
 	while (dest[len_d] != '\0')
 	{
 		len_d = len_d + 1;
@@ -33,8 +27,8 @@ char *_strncat(char *dest, char *src, int n)
 
 	if (n > len_s)
 		n = len_s;
-	/* reset src value to bring printer to start */
-	src = start;
+
+	i = 0;
 	while (i < n)
 	{
 		dest[len_d] = src[i];
@@ -43,5 +37,5 @@ char *_strncat(char *dest, char *src, int n)
 	}
 
 	dest[len_d] = '\0';
-	return (temp);
+	return (dest);
 }
