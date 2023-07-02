@@ -17,8 +17,9 @@ char *_strcat(char *dest, char *src)
 	{
 		len_d = len_d + 1;
 	}
-	/** append src to dest, no need to len_d = len_d - 1
-	as overwrite '\0' 
+	/**
+	 * append src to dest, no need to len_d = len_d - 1
+	 * as overwrite '\0'
 	 */
 	while (src[len_s] != '\0')
 	{
