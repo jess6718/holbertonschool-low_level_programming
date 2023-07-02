@@ -11,7 +11,7 @@
 void print_array(int *a, int n)
 {
 	int i;
-	int index;	
+	int index;
 
 	i = 0;
 	index = n - 1;
