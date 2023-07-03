@@ -18,7 +18,7 @@ int factorial(int n)
 	{
 		return (1);
 	}
-	else	
+	else
 	{
 		return (-1);
 	}
