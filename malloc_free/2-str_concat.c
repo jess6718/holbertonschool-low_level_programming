@@ -43,6 +43,15 @@ char *str_concat(char *s1, char *s2)
 	return (return_val(new_str, s1, s2, len_s1, len_s2));
 }
 
+/**
+ * return_val - function return concat str
+ * @new_str input str
+ * @s1: An input pointer of the first string
+ * @s2: An input pointer of the second string
+ * @len_s1: length
+ * @len_s2: length
+ * Return: Apointer to concatened strings
+ */
 char *return_val(char *new_str, char *s1, char *s2, int len_s1, int len_s2)
 {
 	int index;
