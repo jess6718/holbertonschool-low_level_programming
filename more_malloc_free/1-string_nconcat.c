@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-char *val(char *new_str, char *s1, char *s2, int len_s1, int len_s2, int n);
+char *val(char *new_str, char *s1, char *s2, int len_s1, int n);
 /**
  * string_nconcat - A function that concatenates two strings
  * @s1: An input pointer of the first string
@@ -12,7 +12,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *new_str;
 	int len_s1;
-	int len_s2;
+	unsigned int len_s2;
 
 	if (s1 == NULL)
 	{
@@ -35,12 +35,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len_s2 = len_s2 + 1;
 	}
 
-	new_str = malloc(len_s1 + len_s2 + 1);
+        if (n > len_s2)
+        {
+                n = len_s2;
+        }
+
+	new_str = malloc(len_s1 + n + 1);
 	if (new_str == NULL)
 	{
 		return (NULL);
 	}
-	return (val(new_str, s1, s2, len_s1, len_s2, n));
+	return (val(new_str, s1, s2, len_s1, n));
 }
 
 /**
@@ -53,14 +58,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
  * @n: input int
  * Return: Apointer to concatened strings
  */
-char *val(char *new_str, char *s1, char *s2, int len_s1, int len_s2, int n)
+char *val(char *new_str, char *s1, char *s2, int len_s1, int n)
 {
 	int index;
-
-	if (n > len_s2)
-	{
-		n = len_s2;
-	}
 
 	index = 0;
 	while (index < (len_s1 + n))
