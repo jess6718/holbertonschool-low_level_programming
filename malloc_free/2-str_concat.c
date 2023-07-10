@@ -45,7 +45,7 @@ char *str_concat(char *s1, char *s2)
 
 /**
  * return_val - function return concat str
- * @new_str input str
+ * @new_str: input str
  * @s1: An input pointer of the first string
  * @s2: An input pointer of the second string
  * @len_s1: length
