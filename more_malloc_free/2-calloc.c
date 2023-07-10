@@ -9,28 +9,27 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int idx;
-	unsigned int max;
-	char *spa;
+	unsigned int index;
+	unsigned int total;
+	void *ptr;
 
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
-	max = nmemb * size;
+	total = nmemb * size;
 
-	spa = malloc(max);
-	if (spa == NULL)
+	ptr = malloc(total);
+	if (ptr == NULL)
 	{
 		return (NULL);
 	}
 
-	idx = 0;
-	while (idx < max)
+	index = 0;
+	while (index < total)
 	{
-		*(spa + idx) = 0;
-		idx = idx + 1;
+		*(ptr + index) = 0;
+		index = index + 1;
 	}
-	return (spa);
-
+	return (ptr);
 }
