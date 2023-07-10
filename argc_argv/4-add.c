@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 }
 
 /**
- * non_digit - checks if *s is an int
+ * non_digit - checks if *c is an int
  * @c: check string
  * Return: 0 or 1
  */
