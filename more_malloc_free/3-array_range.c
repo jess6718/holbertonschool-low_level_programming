@@ -18,7 +18,7 @@ int *array_range(int min, int max)
 	{
 		return (NULL);
 	}
-	
+
 	sub = max - min;
 	array = malloc(sizeof(int) * (sub + 1));
 	if (array == NULL)
@@ -26,7 +26,8 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 	index = 0;
-	while (index <= sub) /* putting (min <= max) in condition instead saves creating variable sub */ 
+	/* putting (min <= max) in condition instead saves creating variable sub */
+	while (index <= sub)
 	{
 		array[index] = min;
 		index = index + 1;
