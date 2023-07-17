@@ -29,7 +29,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	puppy->owner = _strdup(owner);
 	if (puppy->owner == NULL)
         {
-                free(puppy);
+                free(puppy->name); /* free element(name) that has been allocated memory */
+		free(puppy);
                 return (NULL);
 	}
 	puppy->age = age;
