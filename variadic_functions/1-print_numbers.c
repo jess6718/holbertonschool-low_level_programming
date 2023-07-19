@@ -33,6 +33,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			{
 				printf("%c", separator[i]);
 			}
+			else 
+			{
+				printf("(nil)");
+			}
 			i = i + 1;
 		}
 		arg_j = arg_j + 1;
