@@ -13,13 +13,22 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int arg_j;
 	va_list ap;
+	char *str;
 
 	arg_j = 0;
 	va_start(ap, n);
 	while (arg_j < n)
 	{
 		/* a pointer (char *) passed in to fetch arg value */
-		printf("%s", va_arg(ap, char *));
+		str = va_arg(ap, char *);
+		if (str != NULL)
+		{
+			printf("%s", str);
+		}
+		else
+		{
+			printf("(nil)");
+		}
 
 		if (arg_j == n - 1)
 		{
@@ -29,10 +38,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		if (separator != NULL)
 		{
 			printf("%s", separator);
-		}
-		else
-		{
-			printf("(nil)");
 		}
 
 		arg_j = arg_j + 1;
