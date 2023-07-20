@@ -1,6 +1,5 @@
-
 section .text
-lobal main
+global main
 
 main:
 	mov rax, 1
