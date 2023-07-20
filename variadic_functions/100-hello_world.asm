@@ -1,13 +1,12 @@
 
-	global main
-
-	section .text
+section .text
+lobal main
 
 main:
 	mov rax, 1
 	mov rdi, 1
 	mov rsi, msg
-	mov rdx, msglen
+	mov rdx, 13
 	syscall
 
 	mov rax, 60
@@ -15,4 +14,4 @@ main:
  	syscall
 
 section .rodata
-	msg: db "Hello, world!", 10
+msg db "Hello, world",10
