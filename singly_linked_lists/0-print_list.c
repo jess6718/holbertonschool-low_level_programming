@@ -13,9 +13,8 @@ size_t print_list(const list_t *h)
 
 	if (h == NULL) /* if pointer h is not pointing to anything */
 	{
-		return (-1);
+		return (0);
 	}
-
 	count = 0;
 	while (h != NULL) /* when h doesn't reach end of the list */
 	{
