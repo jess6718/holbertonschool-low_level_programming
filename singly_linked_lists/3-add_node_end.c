@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
-  * add_node - the function adds a new node at the endof a list
+  * add_node_end - the function adds a new node at the endof a list
   * @head: the pointer points to head of original linked list
   * @str: The string to add to the node
   * Return: The address of the new list or NULL if it failed
