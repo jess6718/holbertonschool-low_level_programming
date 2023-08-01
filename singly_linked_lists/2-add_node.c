@@ -12,7 +12,7 @@ list_t *add_node(list_t **head, const char *str)
 {
 	list_t *temp;
 
-	if (head == NULL)
+	if (head == NULL) /*head not points to anything (empty list) */
 	{
 		return (NULL);
 	}
@@ -24,7 +24,7 @@ list_t *add_node(list_t **head, const char *str)
 	}
 	temp->str = strdup(str);
 	temp->len = _strlen(str);
-	temp->next = *head;
+	temp->next = *head; /* dereferencing head to get address of node */
 	*head = temp;
 	return (temp);
 }
