@@ -14,6 +14,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	{
 		return (NULL);
 	}
+	i = 0;
 	temp = head; /*make temp points to first node of list */
 	while (i < index)
 	{
