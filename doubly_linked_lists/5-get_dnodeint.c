@@ -18,7 +18,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	temp = head; /*make temp points to first node of list */
 	while (i < index)
 	{
-		if (temp == NULL)
+		if (temp == NULL) /* if the node does not exist */
 		{
 			return (NULL);
 		}
