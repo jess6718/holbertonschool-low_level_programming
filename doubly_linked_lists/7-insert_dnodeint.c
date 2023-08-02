@@ -24,7 +24,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		while (i < idx - 1)
 		{
-			if (ptr->1 == NULL) /*check whether index is out of range*/
+			if (ptr1->next == NULL) /*check whether index is out of range*/
 				return (NULL);
 			ptr1 = ptr1->next;
 			i = i + 1;
