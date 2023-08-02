@@ -5,7 +5,7 @@
  * @h: pointer to the dlistint_t
  * @idx: the idxth of node (position)
  * @n: the value of the insert node
- * Description:insert a new node at a given position
+ * description: insert a new node at a given position
  * Return: the address of the new_node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
@@ -22,7 +22,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	else
 	{
-		while (i < idx - 1)
+		while (i < idx - 1 && ptr1->next != NULL)
 		{
 			ptr1 = ptr1->next;
 			i = i + 1;
