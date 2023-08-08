@@ -17,13 +17,14 @@ void closefile(int fd)
 /**
  * ifexit98 - check read file success
  * @filename: file name
+ * @input: input file name
  * Return: void
 */
-void ifexit98(char *filename)
+void ifexit98(int filename, char *input)
 {
-	if (filename == NULL) /*file_from not exist*/
+	if (filename == -1) /*file_from not exist*/
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", input);
 		exit(98);
 	}
 }
@@ -43,16 +44,20 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	}
-	ifexit98(argv[1]);
+	if (argv[1] == NULL) /*file_from not exist*/
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 	fd_from = open(argv[1], O_RDONLY);
-	ifexit98(fd_from);
+	ifexit98(fd_from, argv[1]);
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1) /*if cannot create*/
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	}
 	num_read = read(fd_from, buf, 1024); /*read first 1024 char of file*/
-	ifexit98(num_read);
+	ifexit98(num_read, argv[1]);
 	while (num_read != 0) /*read until end of the file*/
 	{
 		num_written = write(fd_to, buf, num_read);
