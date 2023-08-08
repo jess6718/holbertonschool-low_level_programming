@@ -9,7 +9,7 @@ void closefile(int fd)
 {
 	if (close(fd) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd");
 		exit(100);
 	}
 }
@@ -54,12 +54,12 @@ int main(int argc, char *argv[])
 		num_written = write(fd_to, buf, num_read);
 		if (num_written == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			/*dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);*/
 			exit(99);
 		}
 		num_read = read(fd_from, buf, 1024); /*set num_read to next 1024 char*/
 	}
-	close(fd_from);
-	close(fd_to);
+	closefile(fd_from);
+	closefile(fd_to);
 	return (0);
 }
