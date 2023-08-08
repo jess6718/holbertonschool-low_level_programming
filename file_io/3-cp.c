@@ -52,7 +52,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	}
 	num_read = read(fd_from, buf, 1024); /*read first 1024 char of file*/
-	ifexit98(argv[1]);
 	while (num_read != 0) /*read until end of the file*/
 	{
 		num_written = write(fd_to, buf, num_read);
