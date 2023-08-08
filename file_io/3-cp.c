@@ -9,7 +9,7 @@ void closefile(int fd)
 {
 	if (close(fd) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	num_read = read(fd_from, buf, 1024); /*read first 1024 char of file*/
-	if (num_read != 0) /*read until end of the file*/
+	while (num_read != 0) /*read until end of the file*/
 	{
 		num_written = write(fd_to, buf, num_read);
 		if (num_written == -1)
